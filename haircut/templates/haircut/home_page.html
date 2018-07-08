@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <!-- Webiste Title -->
+     <title>Welcome to Amazing Amy's Barbershop</title>
+</head>
+<body>
+    <!-- Main Website Header -->
+    <h1>Amazing Amy's Barbershop</h1>
+    <p>A fresh cut for you and your family</p>
+    <!-- First Blog Post Title -->
+    <p>Men's Haircuts</p>
+    <img style="width: 200px" src="https://tse1.mm.bing.net/th?id=OIP.ZbXJJNh1_UueFRvMkaIYtAHaE7&pid=Api">
+
+    <!-- First Blog Post Text -->
+    <p>Women's Haircuts</p>
+    <img style="width: 200px" src="https://tse2.mm.bing.net/th?id=OIP.mNk9kM8ZnlOvMffdkk7B0gHaJQ&pid=Api">
+    
+    <p>Baby's Haircuts</p>
+    <img style="width: 200px" src="https://tse3.mm.bing.net/th?id=OIP.oEfNApX0XQNHXwNwzex6HAHaHa&pid=Api">
+    
+
+    <!-- User Comment Form -->
+    <form method="POST">
+        {% crsf_token %}
+        <input type="text" placeholder="Type Your Which haircut Do you want" name="haircut_name">
+        <input type="text" placeholder="Type Your Name" name="customer_name">
+        <input type="text" placeholder="Type Your Time" name="time">
+        <input type="submit" value="Make Your Appointment" name= Appointment">
+    </form>
+   
+    <h2>Comments</h2>
+{% for comment in comments %}
+    Customer {{comment.customer}} says: {{comment.comment}}<hr>
+{% endfor %}
+
+</body>
+</html>
